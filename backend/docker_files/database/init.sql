@@ -1,0 +1,1 @@
+CREATE DATABASE `demos-backend` CHARACTER SET utf8mb4;
