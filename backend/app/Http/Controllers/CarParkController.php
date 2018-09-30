@@ -54,6 +54,7 @@ class CarParkController extends BaseController
 
         $result = curl_exec($ch);
         $result_parsed = json_decode($result);
+
         if ($result_parsed->ok) {
             return ["ok" => true];
         } else {

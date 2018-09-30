@@ -35,6 +35,7 @@ RUN find /var/lib/mysql -type f -exec touch {} \; && service mysql start && mysq
 COPY . /usr/local/src/demos-backend
 COPY docker_files/server/dotenv /usr/local/src/demos-backend/.env
 WORKDIR /usr/local/src/demos-backend
+RUN composer config -g repo.packagist composer https://packagist.phpcomposer.com
 RUN composer install
 RUN chmod -R 777 storage bootstrap
 RUN php artisan key:generate
